@@ -58,4 +58,20 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function inventoryHistory()
+    {
+        $this->hasOne(InventoryHistory::class);
+    }
+
+    public function sales()
+    {
+        $this->hasMany(Sale::class);
+    }
+
+    public function purchases()
+    {
+        $this->hasMany(Purchase::class);
+    }
+
 }
